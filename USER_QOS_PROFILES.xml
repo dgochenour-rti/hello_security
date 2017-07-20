@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://community.rti.com/schema/5.3.0/rti_dds_qos_profiles.xsd"
+    version="5.3.0">
+
+    <qos_library name="SecurityExampleProfiles">
+    
+        <!-- Default QoS:
+
+             This profile contains the QoS that applications would use by
+             default. We can use it as a base profile to inherit from and
+             override some parameters.
+         -->
+        <qos_profile name="A" base_name="BuiltinQosLib::Generic.Security" is_default_qos="true">
+          <participant_qos>
+            <property>
+              <value>
+                <element>
+                  <name>com.rti.serv.secure.authentication.ca_file</name>
+                  <value>../../../dds_security/cert/cacertECdsa.pem</value>
+                </element>
+                <element>
+                  <name>com.rti.serv.secure.authentication.certificate_file</name>
+                  <value>../../../dds_security/cert/peer1ECdsa.pem</value>
+                </element>
+                <element>
+                  <name>com.rti.serv.secure.authentication.private_key_file</name>
+                  <value>../../../dds_security/cert/peer1keyECdsa.pem</value>
+                </element>
+                <element>
+                  <name>com.rti.serv.secure.access_control.permissions_authority_file</name>
+                  <value>../../../dds_security/cert/cacertECdsa.pem</value>
+                </element>
+                <element>
+                  <name>com.rti.serv.secure.access_control.governance_file</name>
+                  <value>../../../dds_security/xml/signed/signed_Governance.p7s</value>
+                </element>
+                <element>
+                  <name>com.rti.serv.secure.access_control.permissions_file</name>
+                  <value>../../../dds_security/xml/signed/signed_PermissionsA.p7s</value>
+                </element>
+              </value>
+            </property>
+          </participant_qos>
+        </qos_profile>
+      <qos_profile name="B" base_name="A">
+        <participant_qos>
+          <property>
+            <value>
+              <element>
+                <name>com.rti.serv.secure.authentication.certificate_file</name>
+                <value>../../../dds_security/cert/peer2ECdsa.pem</value>
+              </element>
+              <element>
+                <name>com.rti.serv.secure.authentication.private_key_file</name>
+                <value>../../../dds_security/cert/peer2keyECdsa.pem</value>
+              </element>
+              <element>
+                <name>com.rti.serv.secure.access_control.permissions_file</name>
+                <value>../../../dds_security/xml/signed/signed_PermissionsB.p7s</value>
+              </element>
+            </value>
+          </property>
+        </participant_qos>
+      </qos_profile>
+      <qos_profile name="DSA_A" base_name="A">
+        <participant_qos>
+          <property>
+            <value>
+              <element>
+                <name>com.rti.serv.secure.authentication.shared_secret_algorithm</name>
+                <value>dh</value>
+              </element>
+              <element>
+                <name>com.rti.serv.secure.authentication.ca_file</name>
+                <value>../../../dds_security/cert/cacertdsa.pem</value>
+                </element>
+              <element>
+                <name>com.rti.serv.secure.authentication.certificate_file</name>
+                <value>../../../dds_security/cert/peer1dsa.pem</value>
+              </element>
+              <element>
+                <name>com.rti.serv.secure.authentication.private_key_file</name>
+                <value>../../../dds_security/cert/peer1keydsa.pem</value>
+              </element>
+            </value>
+          </property>
+        </participant_qos>
+      </qos_profile>
+      <qos_profile name="DSA_B" base_name="DSA_A">
+        <participant_qos>
+          <property>
+            <value>
+              <element>
+                <name>com.rti.serv.secure.authentication.certificate_file</name>
+                <value>../../../dds_security/cert/peer2dsa.pem</value>
+              </element>
+              <element>
+                <name>com.rti.serv.secure.authentication.private_key_file</name>
+                <value>../../../dds_security/cert/peer2keydsa.pem</value>
+              </element>
+              <element>
+                <name>com.rti.serv.secure.access_control.permissions_file</name>
+                <value>../../../dds_security/xml/signed/signed_PermissionsB.p7s</value>
+              </element>
+            </value>
+          </property>
+        </participant_qos>
+      </qos_profile>
+      <qos_profile name="RSA_A" base_name="A">
+        <participant_qos>
+          <property>
+            <value>
+              <element>
+                <name>com.rti.serv.secure.authentication.ca_file</name>
+                <value>../../../dds_security/cert/cacert.pem</value>
+                </element>
+              <element>
+                <name>com.rti.serv.secure.authentication.certificate_file</name>
+                <value>../../../dds_security/cert/peer1.pem</value>
+              </element>
+              <element>
+                <name>com.rti.serv.secure.authentication.private_key_file</name>
+                <value>../../../dds_security/cert/peer1key.pem</value>
+              </element>
+            </value>
+          </property>
+        </participant_qos>
+      </qos_profile>
+      <qos_profile name="RSA_B" base_name="RSA_A">
+        <participant_qos>
+          <property>
+            <value>
+              <element>
+                <name>com.rti.serv.secure.authentication.certificate_file</name>
+                <value>../../../dds_security/cert/peer2.pem</value>
+              </element>
+              <element>
+                <name>com.rti.serv.secure.authentication.private_key_file</name>
+                <value>../../../dds_security/cert/peer2key.pem</value>
+              </element>
+              <element>
+                <name>com.rti.serv.secure.access_control.permissions_file</name>
+                <value>../../../dds_security/xml/signed/signed_PermissionsB.p7s</value>
+              </element>
+            </value>
+          </property>
+        </participant_qos>
+      </qos_profile>
+    </qos_library>
+</dds>
