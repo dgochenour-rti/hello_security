@@ -68,27 +68,45 @@ public class HelloWorldSubscriber {
     // -----------------------------------------------------------------------
 
     public static void main(String[] args) {
-        // --- Get domain ID --- //
+      
         int domainId = 0;
-
-        if (args.length >= 1) {
-            domainId = Integer.valueOf(args[0]).intValue();
-        }
-
-        // -- Get max loop count; 0 means infinite loop --- //
         int sampleCount = 0;
-        if (args.length >= 2) {
-            sampleCount = Integer.valueOf(args[1]).intValue();
-        }
-
         String profile = "A";
-        if (args.length >= 3) {
-            if (args[2].equals("dsa")) {
+        final String DSA_PARVALUE = "dsa";
+        final String RSA_PARVALUE = "rsa";
+        final String EC_PARVALUE = "ec";
+        final String NONE_PARVALUE = "none";
+
+        // first command line argument is the encryption type	
+        if (args.length >= 1) {
+            if (args[0].equals(DSA_PARVALUE)) {
                 profile = "DSA_A";
-            } else if (args[2].equals("rsa")) {
+            } else if (args[0].equals(RSA_PARVALUE)) {
                 profile = "RSA_A";
+            } else if (args[0].equals(EC_PARVALUE)) {
+                profile = "EC_A";
+            } else if (args[0].equals(NONE_PARVALUE)) {
+                profile = "None_A";
+            } else {
+            	System.out.println("Type of encryption '" + args[1] + "' not recognized, " +
+                   " use one of " + DSA_PARVALUE + ", " + RSA_PARVALUE + ", " +
+                   EC_PARVALUE + " or " + NONE_PARVALUE);
+            	System.exit(-1);
             }
+        } 
+        
+        // second command line argument (optional) is the Domain ID
+        if (args.length >= 2) {
+            domainId = Integer.valueOf(args[1]).intValue();
         }
+        
+        // third command line argument (optional) is the number of samples to send/receive
+        if (args.length >= 3) {
+            sampleCount = Integer.valueOf(args[2]).intValue();
+        }
+        
+        
+        
 
         /* Uncomment this to turn on additional logging
         Logger.get_instance().set_verbosity_by_category(
