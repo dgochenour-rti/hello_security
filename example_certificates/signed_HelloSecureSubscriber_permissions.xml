@@ -1,0 +1,78 @@
+MIME-Version: 1.0
+Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----D62C65C1CDE6BE679EFBD741FA5D873E"
+
+This is an S/MIME signed message
+
+------D62C65C1CDE6BE679EFBD741FA5D873E
+Content-Type: text/plain
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../resource/security/schema/dds_security_permissions.xsd">
+<permissions>
+    <grant name="HelloSecureSubscriber">
+        <subject_name>/C=US/ST=CA/O=Real Time Innovations/CN=HelloSecureSubscriber/emailAddress=sub@rti.com</subject_name>
+        <validity>
+            <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+            <not_before>2013-06-01T13:00:00</not_before>
+            <not_after>2023-06-01T13:00:00</not_after>
+        </validity>
+        <allow_rule>
+            <domains>
+                <id>0</id>
+            </domains>
+            <subscribe>
+                <topics>
+                    <topic>SecureExampleTopic</topic>
+                </topics>
+            </subscribe>
+        </allow_rule>
+        <default>DENY</default>
+    </grant>
+</permissions>
+</dds>
+
+------D62C65C1CDE6BE679EFBD741FA5D873E
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+
+MIIGXwYJKoZIhvcNAQcCoIIGUDCCBkwCAQExDzANBglghkgBZQMEAgEFADALBgkq
+hkiG9w0BBwGgggOCMIIDfjCCAmYCCQCnqprrwGs3CjANBgkqhkiG9w0BAQsFADCB
+gDELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAkNBMRQwEgYDVQQHDAtTYW50YSBDbGFy
+YTEeMBwGA1UECgwVUmVhbCBUaW1lIElubm92YXRpb25zMQ8wDQYDVQQDDAZSVEkg
+Q0ExHTAbBgkqhkiG9w0BCQEWDnNlY3VyZUBydGkuY29tMB4XDTE3MDcyODIxMTU0
+NVoXDTI3MDcyNjIxMTU0NVowgYAxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJDQTEU
+MBIGA1UEBwwLU2FudGEgQ2xhcmExHjAcBgNVBAoMFVJlYWwgVGltZSBJbm5vdmF0
+aW9uczEPMA0GA1UEAwwGUlRJIENBMR0wGwYJKoZIhvcNAQkBFg5zZWN1cmVAcnRp
+LmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKkYJZFCWr3pQppL
+JS648dTTUguWJadsGB0ve/2mVn0vjBjiNiNVx2b38nOtewvJgRzvu9Vtn9iBnKL+
+UYDyjzNVJfxswby6u2KsaLtdED2dxbYD9Pa7oMDPuIQQuS2FeWTXybG9GUYUXMHB
+vl3oHdufQ+SCi0+5jb3HoE79ax+8BVtTCRH36QlHpd7aAM3Ahp+kTaD88nV6KrQM
+m0mUHst6ssQgfTrYCEuqXYmwmOgFaJ3fVrfNx4pigYs+ZFYGwADmuzYskj6Z2sfw
+k1XTYTxJI23+pynXzpov5o8MDvyJmYpvVfXK57BfOStFw0Two26bs2dvmUyk8CBQ
+Jpu8UmMCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEALeBIbQdJVfe3c3m6YM8+bzmo
+rAJT7isZ5D437zhHrlMV/RB97gC5jsyd4vGK06jYVv7sVeThlFcBcDVVs54XP+5r
+GDVCBTf6qeazAB1nrGNd6tZ8kc50sDYRxqCEInYjovhTDKAl5sBc+e6rd0Vrd8vu
+tWHu/ieySWptlGEQ+aG1ZtHs6RRnWKWT7qUSo9MXPYQTXjRqyzv4fMRwmgDZiWGd
+qqICpOvLR8NJ6U7BYyoJLu0VrPos8fXdj3x7QEB2zfpTT6km9DqAnxRiwDaGBEyZ
+4jSpe1+Z/b55bKEL1GTrtBWTkR0x55jhcDZ5SlijwACkJOEfqUUYqfF9RzLDezGC
+AqEwggKdAgEBMIGOMIGAMQswCQYDVQQGEwJVUzELMAkGA1UECAwCQ0ExFDASBgNV
+BAcMC1NhbnRhIENsYXJhMR4wHAYDVQQKDBVSZWFsIFRpbWUgSW5ub3ZhdGlvbnMx
+DzANBgNVBAMMBlJUSSBDQTEdMBsGCSqGSIb3DQEJARYOc2VjdXJlQHJ0aS5jb20C
+CQCnqprrwGs3CjANBglghkgBZQMEAgEFAKCB5DAYBgkqhkiG9w0BCQMxCwYJKoZI
+hvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xNzA3MjgyMTE1NDlaMC8GCSqGSIb3DQEJ
+BDEiBCDcAGprj/2zCHgs/x2QJIBtedEkPxsHen0ObwID1RlvgjB5BgkqhkiG9w0B
+CQ8xbDBqMAsGCWCGSAFlAwQBKjALBglghkgBZQMEARYwCwYJYIZIAWUDBAECMAoG
+CCqGSIb3DQMHMA4GCCqGSIb3DQMCAgIAgDANBggqhkiG9w0DAgIBQDAHBgUrDgMC
+BzANBggqhkiG9w0DAgIBKDANBgkqhkiG9w0BAQEFAASCAQAQvo+ude4zea0eB2/g
+hKiGuUkKqs0zBxG7l0pX1aXHniRW8auPbKmMqIXukJz344RqIQYOR5SIJmw2u+yG
+6tVd3W9XEUIeRl6dV5s0OM/H8Du+PUK87z8mJzFR/++m05+tiOnM8PNEyRuSk/gd
+RErq+0xX6etiCne4fzzLSKpKLk18iWx0ktyJojrrsLAFtCPfRdrYtDIdOXklvyd4
+gBZLF2Lt9SRKmwQJFZPzV6/CgsEu9I9i2dxNBllMJY2oXWmVVw0K3VAK7shYyL/5
+IRx+6QcoPXp11Yeek9pwGymEl0z3zqTtRzzlgYoDtc7k1lo0f02Pil86GQG3XRbn
+wmff
+
+------D62C65C1CDE6BE679EFBD741FA5D873E--
+

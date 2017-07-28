@@ -1,0 +1,80 @@
+MIME-Version: 1.0
+Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----0E866CCE1D038B1C4A424AFBCF29B22B"
+
+This is an S/MIME signed message
+
+------0E866CCE1D038B1C4A424AFBCF29B22B
+Content-Type: text/plain
+
+<?xml version="1.0" encoding="utf-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/dds_security_governance.xsd">
+    <domain_access_rules>
+        <domain_rule>
+            <domains>
+                <id_range>
+                    <min>0</min>
+                </id_range>
+            </domains>
+            <allow_unauthenticated_participants>true</allow_unauthenticated_participants>
+            <enable_join_access_control>false</enable_join_access_control>
+            <discovery_protection_kind>NONE</discovery_protection_kind>
+            <liveliness_protection_kind>NONE</liveliness_protection_kind>
+            <rtps_protection_kind>NONE</rtps_protection_kind>
+            <topic_access_rules>
+                <topic_rule>
+                    <topic_expression>*</topic_expression>
+                    <enable_discovery_protection>false</enable_discovery_protection>
+                    <enable_read_access_control>false</enable_read_access_control>
+                    <enable_write_access_control>false</enable_write_access_control>
+                    <metadata_protection_kind>NONE</metadata_protection_kind>
+                    <data_protection_kind>NONE</data_protection_kind>
+                </topic_rule>
+            </topic_access_rules>
+        </domain_rule>
+    </domain_access_rules>
+</dds>
+
+------0E866CCE1D038B1C4A424AFBCF29B22B
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+
+MIIGXwYJKoZIhvcNAQcCoIIGUDCCBkwCAQExDzANBglghkgBZQMEAgEFADALBgkq
+hkiG9w0BBwGgggOCMIIDfjCCAmYCCQCnqprrwGs3CjANBgkqhkiG9w0BAQsFADCB
+gDELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAkNBMRQwEgYDVQQHDAtTYW50YSBDbGFy
+YTEeMBwGA1UECgwVUmVhbCBUaW1lIElubm92YXRpb25zMQ8wDQYDVQQDDAZSVEkg
+Q0ExHTAbBgkqhkiG9w0BCQEWDnNlY3VyZUBydGkuY29tMB4XDTE3MDcyODIxMTU0
+NVoXDTI3MDcyNjIxMTU0NVowgYAxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJDQTEU
+MBIGA1UEBwwLU2FudGEgQ2xhcmExHjAcBgNVBAoMFVJlYWwgVGltZSBJbm5vdmF0
+aW9uczEPMA0GA1UEAwwGUlRJIENBMR0wGwYJKoZIhvcNAQkBFg5zZWN1cmVAcnRp
+LmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKkYJZFCWr3pQppL
+JS648dTTUguWJadsGB0ve/2mVn0vjBjiNiNVx2b38nOtewvJgRzvu9Vtn9iBnKL+
+UYDyjzNVJfxswby6u2KsaLtdED2dxbYD9Pa7oMDPuIQQuS2FeWTXybG9GUYUXMHB
+vl3oHdufQ+SCi0+5jb3HoE79ax+8BVtTCRH36QlHpd7aAM3Ahp+kTaD88nV6KrQM
+m0mUHst6ssQgfTrYCEuqXYmwmOgFaJ3fVrfNx4pigYs+ZFYGwADmuzYskj6Z2sfw
+k1XTYTxJI23+pynXzpov5o8MDvyJmYpvVfXK57BfOStFw0Two26bs2dvmUyk8CBQ
+Jpu8UmMCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEALeBIbQdJVfe3c3m6YM8+bzmo
+rAJT7isZ5D437zhHrlMV/RB97gC5jsyd4vGK06jYVv7sVeThlFcBcDVVs54XP+5r
+GDVCBTf6qeazAB1nrGNd6tZ8kc50sDYRxqCEInYjovhTDKAl5sBc+e6rd0Vrd8vu
+tWHu/ieySWptlGEQ+aG1ZtHs6RRnWKWT7qUSo9MXPYQTXjRqyzv4fMRwmgDZiWGd
+qqICpOvLR8NJ6U7BYyoJLu0VrPos8fXdj3x7QEB2zfpTT6km9DqAnxRiwDaGBEyZ
+4jSpe1+Z/b55bKEL1GTrtBWTkR0x55jhcDZ5SlijwACkJOEfqUUYqfF9RzLDezGC
+AqEwggKdAgEBMIGOMIGAMQswCQYDVQQGEwJVUzELMAkGA1UECAwCQ0ExFDASBgNV
+BAcMC1NhbnRhIENsYXJhMR4wHAYDVQQKDBVSZWFsIFRpbWUgSW5ub3ZhdGlvbnMx
+DzANBgNVBAMMBlJUSSBDQTEdMBsGCSqGSIb3DQEJARYOc2VjdXJlQHJ0aS5jb20C
+CQCnqprrwGs3CjANBglghkgBZQMEAgEFAKCB5DAYBgkqhkiG9w0BCQMxCwYJKoZI
+hvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xNzA3MjgyMTE1NDlaMC8GCSqGSIb3DQEJ
+BDEiBCAT7pfNW9ARBb6ZAR+TsxZcYFC2DEW5qeCbC3Ii4m/bzjB5BgkqhkiG9w0B
+CQ8xbDBqMAsGCWCGSAFlAwQBKjALBglghkgBZQMEARYwCwYJYIZIAWUDBAECMAoG
+CCqGSIb3DQMHMA4GCCqGSIb3DQMCAgIAgDANBggqhkiG9w0DAgIBQDAHBgUrDgMC
+BzANBggqhkiG9w0DAgIBKDANBgkqhkiG9w0BAQEFAASCAQAg2yxVrWJatBP0h2Pe
+2IuLh9aSNdpQRpWiC+oF7FYfMd+LG6L8eAugvsVttqzrTwq2bp+gaPrp55evSc33
+xzUtKvbpTTtx3UdpP0UFggDjnJXO44lX6HnVx+sOB9+MonTXI+UjJBhMHWFysqrW
+iVaJ27gF77eUjN9YOBp0yPDk4k6f6PCZk/Egb4DBkc3GAd3NOq06Ts0MM0DiK5cI
+4K0/VP7QmqrxJ+8ZWVFvN19BqencbfxwjsjlZtYn+1VSZGxkAfldZ/f52utfHEUz
+xHskTABk/sdSCASh0IOBsUSiFcZTXqWk2g7rRl+QZ0PD5+LihMIz53jhuPHwvh5e
+1gxJ
+
+------0E866CCE1D038B1C4A424AFBCF29B22B--
+
