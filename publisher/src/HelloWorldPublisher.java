@@ -210,7 +210,7 @@ public class HelloWorldPublisher {
             and register the keyed instance prior to writing */
             //instance_handle = writer.register_instance(instance);
 
-            final long sendPeriodMillis = 4 * 1000; // 4 seconds
+            final long sendPeriodMillis = 2 * 1000; // 2 seconds
 
             for (int count = 0;
             (sampleCount == 0) || (count < sampleCount);
