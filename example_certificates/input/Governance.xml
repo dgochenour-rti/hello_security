@@ -8,7 +8,7 @@
                     <min>0</min>
                 </id_range>
             </domains>
-            <allow_unauthenticated_participants>true</allow_unauthenticated_participants>
+            <allow_unauthenticated_participants>false</allow_unauthenticated_participants>
             <enable_join_access_control>false</enable_join_access_control>
             <discovery_protection_kind>NONE</discovery_protection_kind>
             <liveliness_protection_kind>NONE</liveliness_protection_kind>
@@ -17,8 +17,8 @@
                 <topic_rule>
                     <topic_expression>*</topic_expression>
                     <enable_discovery_protection>false</enable_discovery_protection>
-                    <enable_read_access_control>false</enable_read_access_control>
-                    <enable_write_access_control>false</enable_write_access_control>
+                    <enable_read_access_control>true</enable_read_access_control>
+                    <enable_write_access_control>true</enable_write_access_control>
                     <metadata_protection_kind>NONE</metadata_protection_kind>
                     <data_protection_kind>NONE</data_protection_kind>
                 </topic_rule>

@@ -31,7 +31,22 @@
               <sec>DURATION_INFINITE_SEC</sec>
               <nanosec>DURATION_INFINITE_NSEC</nanosec>
             </locator_reachability_lease_duration>
-          </discovery_config>
+                    <publication_writer_publish_mode>
+                        <kind>ASYNCHRONOUS_PUBLISH_MODE_QOS</kind>
+                    </publication_writer_publish_mode>
+                    <subscription_writer_publish_mode>
+                        <kind>ASYNCHRONOUS_PUBLISH_MODE_QOS</kind>
+                    </subscription_writer_publish_mode>
+          </discovery_config> 
+          <property>
+            <value>
+              <element>
+                <name>dds.transport.UDPv4.builtin.parent.message_size_max</name>
+                <value>1400</value>
+                <propagate>false</propagate>
+              </element>
+            </value>
+          </property>
         </participant_qos>
       </qos_profile>
 
